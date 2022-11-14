@@ -1,0 +1,16 @@
+{% extends 'basic_app/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<h1>Registration page</h1>
+<!-- the token that carries our form data  -->
+<form action="" method="post" >
+{{form.as_p}}
+{% csrf_token %}
+<button type="submit">Submit</button>
+<a href="{% url 'basic_app:register' %}">Register</a>
+</form>
+{% endblock %}

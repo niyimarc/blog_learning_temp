@@ -1,0 +1,21 @@
+{% extends 'basic_app/base.html' %}
+
+{% block title %}
+List Post
+{% endblock %}
+
+{% block content %}
+{% if post_list %}
+{% for p in post_list %}
+<p>{{p.post_title}}</p>
+<!-- <p>{{p.id}}</p> -->
+<img src="{{ p.post_img.url }}" alt="image">
+    <p>{{ p.contents }}</p>
+    <h5>{{ p.author }}</h5>
+    <p>{{ p.create_date }}</p>
+<p><a href="{% url 'basic_app:post_detail' p.id %}">Read more..</a></p>
+<p><a href="{% url 'basic_app:update_post' p.id %}">Edit Post</a></p>
+<p><a href="{% url 'basic_app:delete_post' p.id %}">Delete Post</a></p>
+{% endfor %}
+{% endif %}
+{% endblock %}

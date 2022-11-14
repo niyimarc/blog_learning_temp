@@ -1,0 +1,18 @@
+{% extends 'basic_app/base.html' %}
+{% if post_detail %}
+{% block title %}
+{{post_detail.post_title}}
+{% endblock %}
+{% endif %}
+
+{% block content %}
+{% if post_detail %}
+<p>{{post_detail.post_title}}</p>
+<!-- <p>{{p.id}}</p> -->
+<img src="{{ post_detail.post_img.url }}" alt="image">
+    <p>{{ post_detail.contents }}</p>
+    <h5>{{ post_detail.author }}</h5>
+    <p>{{ post_detail.create_date }}</p>
+
+{% endif %}
+{% endblock %}

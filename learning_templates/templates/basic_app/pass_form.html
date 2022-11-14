@@ -1,0 +1,15 @@
+{% extends 'basic_app/base.html' %}
+
+{% block title %}
+Edit Password
+{% endblock %}
+
+{% block content %}
+<h1>Edit Password</h1>
+<!-- the token that carries our form data  -->
+<form action="" method="post">
+{{pass_key.as_p}}
+{% csrf_token %}
+<button type="submit">Edit Password</button>
+</form>
+{% endblock %}

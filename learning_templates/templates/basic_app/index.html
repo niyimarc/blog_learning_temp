@@ -1,0 +1,25 @@
+{% extends 'basic_app/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+<!-- main content starts here  -->
+{% block content %}
+<h1>This is the home page</h1>
+<!-- create an if block  -->
+{% if post %}
+<!-- create a for loop block  -->
+{% for p in post %}
+<div>
+    <p>{{p.post_title}}</p>
+    <img src="{{ p.post_img.url }}" alt="image">
+    <p>{{ p.contents }}</p>
+    <h5>{{ p.author }}</h5>
+    <p>{{ p.create_date }}</p>
+</div>
+{% endfor %}
+<!-- the for loop ends here  -->
+{% endif %}
+<!-- the if block ends here  -->
+{% endblock %}
+<!-- main content ends here  -->

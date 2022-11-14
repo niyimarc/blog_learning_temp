@@ -1,0 +1,15 @@
+{% extends 'basic_app/base.html' %}
+
+{% block title %}
+Other
+{% endblock %}
+
+{% block content %}
+<h1>Other page</h1>
+<!-- the token that carries our form data  -->
+<form action="" method="post" enctype="multipart/form-data">
+{{postform.as_p}}
+{% csrf_token %}
+<button type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'basic_app/base.html' %}
+
+{% block title %}
+Edit User
+{% endblock %}
+
+{% block content %}
+<h1>Edit Profile</h1>
+
+<!-- the token that carries our form data  -->
+<form action="" method="post">
+{{edit_key.as_p}}
+{% csrf_token %}
+<button type="submit">Submit</button>
+</form>
+{% endblock %}

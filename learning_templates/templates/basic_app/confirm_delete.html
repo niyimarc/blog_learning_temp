@@ -1,0 +1,13 @@
+{% extends 'basic_app/base.html' %}
+
+{% block title %}
+List Post
+{% endblock %}
+
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<input type="submit" value="Delete">
+<a href="{% url 'basic_app:list_post' %}">Cancel</a>
+</form>
+{% endblock %}
